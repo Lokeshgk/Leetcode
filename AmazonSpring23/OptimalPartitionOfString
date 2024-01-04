@@ -1,0 +1,15 @@
+class Solution:
+    def partitionString(self, s: str) -> int:
+        visited = {}
+        count = 1
+        n = len(s)
+
+        for i in range(0, n):
+            if s[i] in visited:
+                count += 1
+                visited = {}
+                visited[s[i]] = 1
+            else:
+                visited[s[i]] = 1
+        
+        return count
